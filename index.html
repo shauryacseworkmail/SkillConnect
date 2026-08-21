@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaam Ho Jayega — Find Trusted Local Professionals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ ICON SPRITE ============ -->
+<svg style="display:none">
+<defs>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M6 8h12v4a6 6 0 0 1-12 0V8zM12 18v3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3M18.4 5.6l-1.7 1.7M7.3 16.7l-1.7 1.7M18.4 18.4l-1.7-1.7M7.3 7.3 5.6 5.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-hammer" viewBox="0 0 24 24"><path d="M14.5 5.5 18.5 9.5M3 21l7-7M9 11l4-4 4 4-4 4-4-4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-roller" viewBox="0 0 24 24"><rect x="4" y="4" width="12" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 10v4h4v7M8 14h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11M12 6l2-2M12 6l-2-2M12 18l2 2M12 18l-2 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-spray" viewBox="0 0 24 24"><path d="M9 8h6l1 13H8L9 8zM10 8V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v3M4 6h2M4 10h2M4 14h2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5-9 5-9-5zM3 8v9l9 5 9-5V8M12 13v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-4.3-4.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.6 7-11.6A7 7 0 0 0 5 9.4C5 14.4 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.7-4.9 4.5 1.3 6.5L12 16.9 6.1 20.2l1.3-6.5L2.5 9.2l6.6-.7z" fill="currentColor"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 4 6v6c0 5.2 3.5 8.7 8 9.5 4.5-.8 8-4.3 8-9.5V6l-8-3.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.3l2.3 2.3 4.5-4.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.8-9C.6 8 2 4.5 5.4 3.7c2-.5 3.8.3 6.6 3.1 2.8-2.8 4.6-3.6 6.6-3.1 3.4.8 4.8 4.3 3.2 7.8-2.3 4.4-9.8 9-9.8 9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-userstar" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c1-3.6 4-5.5 7-5.5s6 1.9 7 5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+</defs>
+</svg>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner container">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">KH</span>
+      <span class="brand-name">Kaam Ho Jayega</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#top">Home</a>
+      <a href="#services">Services</a>
+      <a href="#professionals">Find Professionals</a>
+      <a href="#how">How It Works</a>
+      <a href="#pro">Become a Professional</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="navbar-right">
+      <button class="location-pill" type="button">
+        <svg class="icon icon-sm"><use href="#i-pin"/></svg>
+        <span>Lucknow, UP</span>
+      </button>
+      <a href="#" class="btn btn-ghost">Log in</a>
+      <a href="#" class="btn btn-primary">Sign up</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#top">Home</a>
+    <a href="#services">Services</a>
+    <a href="#professionals">Find Professionals</a>
+    <a href="#how">How It Works</a>
+    <a href="#pro">Become a Professional</a>
+    <a href="#about">About</a>
+    <div class="mobile-drawer-actions">
+      <a href="#" class="btn btn-ghost">Log in</a>
+      <a href="#" class="btn btn-primary">Sign up</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Verified pros · Same-day booking</p>
+      <h1 class="hero-title">Find trusted professionals<br>near you.</h1>
+      <p class="hero-sub">From plumbing and electrical work to repairs, cleaning and home services — find skilled professionals for almost any job.</p>
+
+      <form class="search-ticket" id="searchForm">
+        <div class="ticket-punch" aria-hidden="true"></div>
+        <div class="search-field">
+          <svg class="icon"><use href="#i-search"/></svg>
+          <div>
+            <label for="serviceInput">Service</label>
+            <input id="serviceInput" type="text" placeholder="Plumber, electrician…">
+          </div>
+        </div>
+        <div class="search-divider" aria-hidden="true"></div>
+        <div class="search-field">
+          <svg class="icon"><use href="#i-pin"/></svg>
+          <div>
+            <label for="locationInput">Location</label>
+            <input id="locationInput" type="text" placeholder="Lucknow, Uttar Pradesh" value="Lucknow, Uttar Pradesh">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-search">Find Professionals</button>
+        <div class="ticket-punch" aria-hidden="true"></div>
+      </form>
+
+      <p class="trust-line">
+        <svg class="icon icon-sm"><use href="#i-shield"/></svg>
+        Trusted professionals&nbsp;·&nbsp;Transparent pricing&nbsp;·&nbsp;Local services
+      </p>
+    </div>
+
+    <div class="hero-board" aria-hidden="true">
+      <div class="board-frame">
+        <div class="board-badge board-badge--plumber"><svg class="icon"><use href="#i-wrench"/></svg><span>Plumbing</span></div>
+        <div class="board-badge board-badge--elec"><svg class="icon"><use href="#i-plug"/></svg><span>Electrical</span></div>
+        <div class="board-badge board-badge--mech"><svg class="icon"><use href="#i-gear"/></svg><span>Mechanic</span></div>
+        <div class="board-badge board-badge--carp"><svg class="icon"><use href="#i-hammer"/></svg><span>Carpentry</span></div>
+        <div class="board-ring board-ring--1"></div>
+        <div class="board-ring board-ring--2"></div>
+        <div class="board-tag">
+          <span class="board-tag-dot"></span>
+          <span><strong>2,300+</strong> jobs completed this week</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POPULAR SERVICES ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>Popular services</h2>
+      <p>Find the right professional for your next job.</p>
+    </div>
+
+    <div class="grid grid-4 services-grid">
+      <a class="svc-ticket" href="#">
+        <div class="svc-icon"><svg class="icon"><use href="#i-wrench"/></svg></div>
+        <h3>Plumber</h3>
+        <p>Pipe repairs, leaks, installations and more.</p>
+        <span class="svc-go">Explore <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="svc-ticket" href="#">
+        <div class="svc-icon"><svg class="icon"><use href="#i-plug"/></svg></div>
+        <h3>Electrician</h3>
+        <p>Wiring, fittings, switchboards and repairs.</p>
+        <span class="svc-go">Explore <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="svc-ticket" href="#">
+        <div class="svc-icon"><svg class="icon"><use href="#i-gear"/></svg></div>
+        <h3>Mechanic</h3>
+        <p>Car and bike servicing, breakdowns, tuning.</p>
+        <span class="svc-go">Explore <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="svc-ticket" href="#">
+        <div class="svc-icon"><svg class="icon"><use href="#i-hammer"/></svg></div>
+        <h3>Carpenter</h3>
+        <p>Furniture, fittings, repairs and custom work.</p>
+        <span class="svc-go">Explore <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="svc-ticket" href="#">
+        <div class="svc-icon"><svg class="icon"><use href="#i-roller"/></svg></div>
+        <h3>Painter</h3>
+        <p>Interior, exterior and touch-up painting.</p>
+        <span class="svc-go">Explore <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="svc-ticket" href="#">
+        <div class="svc-icon"><svg class="icon"><use href="#i-snow"/></svg></div>
+        <h3>AC Repair</h3>
+        <p>Servicing, gas refill and installation.</p>
+        <span class="svc-go">Explore <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="svc-ticket" href="#">
+        <div class="svc-icon"><svg class="icon"><use href="#i-spray"/></svg></div>
+        <h3>Cleaner</h3>
+        <p>Home, deep and move-in/move-out cleaning.</p>
+        <span class="svc-go">Explore <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="svc-ticket" href="#">
+        <div class="svc-icon"><svg class="icon"><use href="#i-box"/></svg></div>
+        <h3>Appliance Repair</h3>
+        <p>Fridge, washing machine, microwave and more.</p>
+        <span class="svc-go">Explore <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+
+    <div class="section-cta">
+      <a href="#" class="btn btn-outline">View All Services <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section section-alt" id="how">
+  <div class="container">
+    <div class="section-head">
+      <h2>How it works</h2>
+      <p>Getting help has never been easier.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon"><svg class="icon"><use href="#i-search"/></svg></div>
+        <span class="step-label">Search</span>
+        <p>Tell us what service you need and where you need it.</p>
+      </div>
+      <div class="step-line" aria-hidden="true"></div>
+      <div class="step">
+        <div class="step-icon"><svg class="icon"><use href="#i-userstar"/></svg></div>
+        <span class="step-label">Choose</span>
+        <p>Compare professionals based on ratings, experience, price and availability.</p>
+      </div>
+      <div class="step-line" aria-hidden="true"></div>
+      <div class="step">
+        <div class="step-icon"><svg class="icon"><use href="#i-calendar"/></svg></div>
+        <span class="step-label">Get it done</span>
+        <p>Book a professional and get your job completed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROFESSIONALS ============ -->
+<section class="section" id="professionals">
+  <div class="container">
+    <div class="section-head">
+      <h2>Top professionals near you</h2>
+      <p>Highly rated professionals trusted by customers.</p>
+    </div>
+
+    <div class="grid grid-4 pros-grid">
+
+      <article class="pro-ticket">
+        <button class="fav-btn" type="button" aria-label="Save professional"><svg class="icon"><use href="#i-heart"/></svg></button>
+        <div class="pro-photo" style="--av-a:#2545A0;--av-b:#0F2A57;">RK</div>
+        <div class="pro-verified"><svg class="icon icon-sm"><use href="#i-shield"/></svg> Verified</div>
+        <h3>Raj Kumar</h3>
+        <p class="pro-role">Plumber</p>
+        <p class="pro-rating"><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg> 4.8 <span class="muted">(126 reviews)</span></p>
+        <p class="pro-meta">5 years experience</p>
+        <div class="ticket-perf" aria-hidden="true"></div>
+        <div class="pro-foot">
+          <div>
+            <span class="pro-price">₹300</span><span class="muted"> starting</span>
+            <p class="pro-loc"><svg class="icon icon-sm"><use href="#i-pin"/></svg> Lucknow</p>
+          </div>
+          <span class="avail-dot avail-dot--today">● Available today</span>
+        </div>
+        <a href="#" class="btn btn-outline btn-block">View Profile</a>
+      </article>
+
+      <article class="pro-ticket">
+        <button class="fav-btn" type="button" aria-label="Save professional"><svg class="icon"><use href="#i-heart"/></svg></button>
+        <div class="pro-photo" style="--av-a:#F5A623;--av-b:#B9750C;">SV</div>
+        <div class="pro-verified"><svg class="icon icon-sm"><use href="#i-shield"/></svg> Verified</div>
+        <h3>Sunita Verma</h3>
+        <p class="pro-role">Electrician</p>
+        <p class="pro-rating"><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg> 4.9 <span class="muted">(98 reviews)</span></p>
+        <p class="pro-meta">7 years experience</p>
+        <div class="ticket-perf" aria-hidden="true"></div>
+        <div class="pro-foot">
+          <div>
+            <span class="pro-price">₹250</span><span class="muted"> starting</span>
+            <p class="pro-loc"><svg class="icon icon-sm"><use href="#i-pin"/></svg> Gomti Nagar</p>
+          </div>
+          <span class="avail-dot avail-dot--today">● Available today</span>
+        </div>
+        <a href="#" class="btn btn-outline btn-block">View Profile</a>
+      </article>
+
+      <article class="pro-ticket">
+        <button class="fav-btn" type="button" aria-label="Save professional"><svg class="icon"><use href="#i-heart"/></svg></button>
+        <div class="pro-photo" style="--av-a:#1F9D55;--av-b:#0E6E38;">AM</div>
+        <div class="pro-verified"><svg class="icon icon-sm"><use href="#i-shield"/></svg> Verified</div>
+        <h3>Arif Mirza</h3>
+        <p class="pro-role">Mechanic</p>
+        <p class="pro-rating"><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg> 4.7 <span class="muted">(214 reviews)</span></p>
+        <p class="pro-meta">9 years experience</p>
+        <div class="ticket-perf" aria-hidden="true"></div>
+        <div class="pro-foot">
+          <div>
+            <span class="pro-price">₹200</span><span class="muted"> starting</span>
+            <p class="pro-loc"><svg class="icon icon-sm"><use href="#i-pin"/></svg> Alambagh</p>
+          </div>
+          <span class="avail-dot avail-dot--tomorrow">● Tomorrow</span>
+        </div>
+        <a href="#" class="btn btn-outline btn-block">View Profile</a>
+      </article>
+
+      <article class="pro-ticket">
+        <button class="fav-btn" type="button" aria-label="Save professional"><svg class="icon"><use href="#i-heart"/></svg></button>
+        <div class="pro-photo" style="--av-a:#E1483C;--av-b:#A32A22;">PT</div>
+        <div class="pro-verified"><svg class="icon icon-sm"><use href="#i-shield"/></svg> Verified</div>
+        <h3>Poonam Tiwari</h3>
+        <p class="pro-role">Carpenter</p>
+        <p class="pro-rating"><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg> 4.8 <span class="muted">(77 reviews)</span></p>
+        <p class="pro-meta">6 years experience</p>
+        <div class="ticket-perf" aria-hidden="true"></div>
+        <div class="pro-foot">
+          <div>
+            <span class="pro-price">₹350</span><span class="muted"> starting</span>
+            <p class="pro-loc"><svg class="icon icon-sm"><use href="#i-pin"/></svg> Indira Nagar</p>
+          </div>
+          <span class="avail-dot avail-dot--today">● Available today</span>
+        </div>
+        <a href="#" class="btn btn-outline btn-block">View Profile</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="section-head">
+      <h2>Why choose our platform?</h2>
+    </div>
+    <div class="grid grid-4 why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg class="icon"><use href="#i-shield"/></svg></div>
+        <h3>Verified professionals</h3>
+        <p>Connect with trusted and verified service providers.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg class="icon"><use href="#i-box"/></svg></div>
+        <h3>Transparent pricing</h3>
+        <p>Know the expected starting price before requesting a service.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg class="icon"><use href="#i-pin"/></svg></div>
+        <h3>Local professionals</h3>
+        <p>Find skilled professionals available in your area.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg class="icon"><use href="#i-star"/></svg></div>
+        <h3>Customer reviews</h3>
+        <p>Make better decisions using real customer ratings and reviews.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LARGE PROMO CTA ============ -->
+<section class="cta-band">
+  <div class="container cta-band-inner">
+    <h2>Need help with something?</h2>
+    <p>Find a skilled professional who can get the job done.</p>
+    <div class="cta-band-actions">
+      <a href="#professionals" class="btn btn-onDark">Find a Professional</a>
+      <a href="#services" class="btn btn-outline-onDark">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BECOME A PROFESSIONAL ============ -->
+<section class="section" id="pro">
+  <div class="container pro-split">
+    <div class="pro-visual" aria-hidden="true">
+      <div class="pro-visual-card">
+        <svg class="icon icon-xl"><use href="#i-wrench"/></svg>
+        <div class="pro-visual-line pro-visual-line--1"></div>
+        <div class="pro-visual-line pro-visual-line--2"></div>
+        <div class="pro-visual-chip">
+          <svg class="icon icon-sm"><use href="#i-star"/></svg> 4.9 rating
+        </div>
+      </div>
+    </div>
+    <div class="pro-copy">
+      <p class="eyebrow">For professionals</p>
+      <h2>Turn your skills into opportunities.</h2>
+      <p class="pro-desc">Join our platform, showcase your skills, connect with local customers, and grow your service business.</p>
+      <ul class="pro-benefits">
+        <li><svg class="icon icon-sm"><use href="#i-check"/></svg> Get discovered by local customers</li>
+        <li><svg class="icon icon-sm"><use href="#i-check"/></svg> Manage service requests</li>
+        <li><svg class="icon icon-sm"><use href="#i-check"/></svg> Build your professional profile</li>
+        <li><svg class="icon icon-sm"><use href="#i-check"/></svg> Collect customer reviews</li>
+        <li><svg class="icon icon-sm"><use href="#i-check"/></svg> Grow your business</li>
+      </ul>
+      <a href="#" class="btn btn-primary">Become a Professional <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>What our customers say</h2>
+    </div>
+    <div class="grid grid-3 testimonial-grid">
+      <figure class="testimonial">
+        <div class="testimonial-stars"><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg></div>
+        <blockquote>Found a plumber within minutes. He arrived on time and fixed the problem quickly.</blockquote>
+        <figcaption>
+          <div class="testimonial-avatar" style="--av-a:#2545A0;--av-b:#0F2A57;">PS</div>
+          <div>
+            <strong>Priya Sharma</strong>
+            <span>Service: Plumbing</span>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="testimonial">
+        <div class="testimonial-stars"><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg></div>
+        <blockquote>Transparent pricing and a clean job on my kitchen wiring. Highly recommend.</blockquote>
+        <figcaption>
+          <div class="testimonial-avatar" style="--av-a:#F5A623;--av-b:#B9750C;">AK</div>
+          <div>
+            <strong>Aman Khanna</strong>
+            <span>Service: Electrical</span>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="testimonial">
+        <div class="testimonial-stars"><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg><svg class="icon icon-sm rating-star"><use href="#i-star"/></svg></div>
+        <blockquote>My AC was fixed the same evening I booked. Booking took less than two minutes.</blockquote>
+        <figcaption>
+          <div class="testimonial-avatar" style="--av-a:#1F9D55;--av-b:#0E6E38;">NR</div>
+          <div>
+            <strong>Neha Rastogi</strong>
+            <span>Service: AC Repair</span>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE CATEGORIES ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Services for every need</h2>
+    </div>
+    <div class="grid grid-3 category-grid">
+      <div class="category-card">
+        <h3>Home Services</h3>
+        <ul>
+          <li>Plumbing</li><li>Electrical</li><li>Carpentry</li>
+          <li>Painting</li><li>Cleaning</li><li>Pest Control</li>
+        </ul>
+      </div>
+      <div class="category-card">
+        <h3>Repair Services</h3>
+        <ul>
+          <li>AC Repair</li><li>Refrigerator Repair</li><li>Washing Machine Repair</li>
+          <li>TV Repair</li><li>Computer Repair</li><li>Mobile Repair</li>
+        </ul>
+      </div>
+      <div class="category-card">
+        <h3>Vehicle Services</h3>
+        <ul>
+          <li>Car Mechanic</li><li>Bike Mechanic</li><li>Car Wash</li>
+          <li>Tire Service</li><li>Battery Service</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#" class="btn btn-outline">Explore All Services <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-band">
+  <div class="container stats-grid">
+    <div class="stat"><span class="stat-num">10,000+</span><span class="stat-label">Professionals</span></div>
+    <div class="stat"><span class="stat-num">50,000+</span><span class="stat-label">Services Completed</span></div>
+    <div class="stat"><span class="stat-num">4.8/5</span><span class="stat-label">Average Rating</span></div>
+    <div class="stat"><span class="stat-num">100+</span><span class="stat-label">Service Categories</span></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section-alt">
+  <div class="container faq-wrap">
+    <div class="section-head">
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item is-open">
+        <button class="faq-q">
+          How do I find a professional?
+          <svg class="icon faq-chevron"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="faq-a"><p>Search for a service and enter your location on the homepage. We'll show you verified professionals near you, sorted by rating and availability.</p></div>
+      </div>
+      <div class="faq-item is-open">
+        <button class="faq-q">
+          How are professionals verified?
+          <svg class="icon faq-chevron"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="faq-a"><p>Every professional goes through an identity check and skill verification before they can appear in search results and accept jobs.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Can I compare different professionals?
+          <svg class="icon faq-chevron"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="faq-a"><p>Yes. You can compare ratings, years of experience, starting price and availability side by side before you choose.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          How much does a service cost?
+          <svg class="icon faq-chevron"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="faq-a"><p>Each professional lists a starting price. The final cost depends on the scope of the job and is confirmed before work begins.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Can I cancel a service request?
+          <svg class="icon faq-chevron"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="faq-a"><p>Yes, you can cancel a request from your account any time before a professional confirms the job.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          How do I become a professional?
+          <svg class="icon faq-chevron"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="faq-a"><p>Tap "Become a Professional", complete your profile and verification, and start receiving requests in your area.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          How do reviews and ratings work?
+          <svg class="icon faq-chevron"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="faq-a"><p>After a job is completed, customers can leave a star rating and a written review, which appears on the professional's profile.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-band cta-band--final">
+  <div class="container cta-band-inner">
+    <h2>Your next job starts here.</h2>
+    <p>Whether you need a quick repair or a skilled professional for a bigger project, we're here to help.</p>
+    <div class="cta-band-actions">
+      <a href="#professionals" class="btn btn-onDark">Find a Professional</a>
+      <a href="#pro" class="btn btn-outline-onDark">Become a Professional</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">KH</span>
+        <span class="brand-name">Kaam Ho Jayega</span>
+      </a>
+      <p>Connecting customers with verified local professionals for everyday jobs, big and small.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook" class="social-dot">f</a>
+        <a href="#" aria-label="Instagram" class="social-dot">in</a>
+        <a href="#" aria-label="Twitter / X" class="social-dot">x</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#how">How It Works</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#">Plumbing</a>
+      <a href="#">Electrical</a>
+      <a href="#">Mechanic</a>
+      <a href="#">Carpentry</a>
+      <a href="#">Cleaning</a>
+      <a href="#">AC Repair</a>
+    </div>
+    <div class="footer-col">
+      <h4>For Professionals</h4>
+      <a href="#pro">Become a Professional</a>
+      <a href="#">Professional Login</a>
+      <a href="#">Resources</a>
+      <a href="#">Help Center</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">Help Center</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Report a Problem</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cancellation Policy</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Kaam Ho Jayega. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
