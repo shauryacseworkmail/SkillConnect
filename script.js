@@ -20,33 +20,16 @@ mobileDrawer.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', closeDrawer);
 });
 
-// ---------- FAQ accordion ----------
-document.querySelectorAll('.faq-item').forEach(item => {
-  const question = item.querySelector('.faq-q');
-  question.addEventListener('click', () => {
-    item.classList.toggle('is-open');
-  });
-});
-
-// ---------- Favorite / heart toggle on professional cards ----------
-document.querySelectorAll('.fav-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const active = btn.classList.toggle('is-active');
-    btn.setAttribute('aria-pressed', String(active));
-  });
-});
-
 // ---------- Search form ----------
 const searchForm = document.getElementById('searchForm');
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const service = document.getElementById('serviceInput').value.trim();
   const location = document.getElementById('locationInput').value.trim();
-  const target = document.getElementById('professionals');
-  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Hook up your search/filtering logic here.
 });
 
-// ---------- Location pill (placeholder interaction) ----------
+// ---------- Location pill ----------
 document.querySelector('.location-pill').addEventListener('click', () => {
   const locationInput = document.getElementById('locationInput');
   if (locationInput) locationInput.focus();
